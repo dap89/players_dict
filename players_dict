@@ -1,0 +1,55 @@
+class Player():
+    def __init__(self, first_name, last_name, height_cm, weight_kg):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.height_cm = height_cm
+        self.weight_kg = weight_kg
+
+    def weight_to_lbs(self):
+        pounds = self.weight_kg * 2.20462262
+        return pounds
+
+class BasketballPlayer(Player):
+    def __init__(self, first_name, last_name, height_cm, weight_kg, points, rebounds, assists):
+        super().__init__(first_name=first_name, last_name=last_name, height_cm=height_cm, weight_kg=weight_kg)
+        self.points = points
+        self.rebounds = rebounds
+        self.assists = assists
+
+class FootballPlayer(Player):
+    def __init__(self, first_name, last_name, height_cm, weight_kg, goals, yellow_cards, red_cards):
+        super().__init__(first_name=first_name, last_name=last_name, height_cm=height_cm, weight_kg=weight_kg)
+        self.goals = goals
+        self.yellow_cards = yellow_cards
+        self.red_cards = red_cards
+
+air = BasketballPlayer(first_name="Michael", last_name="Jordan", height_cm=198, weight_kg=98, points=30.1, rebounds=6.2, assists=5.3)
+
+"""print(air.first_name)
+print(air.last_name)
+print(air.height_cm)
+print(air.weight_kg)
+print(air.points)
+print(air.rebounds)
+print(air.assists)
+print(air.weight_to_lbs())"""
+
+ronaldo = FootballPlayer(first_name="Ronaldo Luis", last_name="Nazario de Lima", height_cm=182, weight_kg=82, goals=343, yellow_cards=31, red_cards=3)
+
+"""print(ronaldo.first_name)
+print(ronaldo.last_name)
+print(ronaldo.height_cm)
+print(ronaldo.weight_kg)
+print(ronaldo.goals)
+print(ronaldo.yellow_cards)
+print(ronaldo.red_cards)
+print(ronaldo.weight_to_lbs())"""
+
+air_dict = {"first_name": "Michael", "last_name": "Jordan", "height_cm": 198, "weight_kg": 98, "points": 30.1, "rebounds": 6.2, "assists": 5.3}
+print(air.__dict__)
+print(air_dict["last_name"])
+print(air_dict["points"])
+
+ronaldo_dict = {"first_name": "Ronaldo Luis", "last_name": "Nazario de Lima", "height_cm": 182, "weight_kg": 82, "goals": 343, "yellow_cards": 31, "red_cards": 3}
+print(ronaldo.__dict__)
+print(ronaldo_dict["goals"])
